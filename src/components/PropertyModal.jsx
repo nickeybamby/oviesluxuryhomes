@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   FaBath,
   FaBed,
@@ -17,15 +17,11 @@ const PropertyModal = ({ onClose, property }) => {
   const images = Array.isArray(property.images) ? property.images : [];
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) =>
-      prev === images.length - 1 ? 0 : prev + 1
-    );
+    setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
-    );
+    setCurrentImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
   return (
@@ -69,7 +65,7 @@ const PropertyModal = ({ onClose, property }) => {
           </button>
 
           {/* Image Counter */}
-          <div className="absolute bottom-4 right-4 flex items-center gap-4">
+          <div className="absolute bottom-4 right-4 flex  items-center gap-4">
             <div className="bg-black/50 text-white px-3 py-1 rounded-full">
               {currentImageIndex + 1} / {images.length}
             </div>
@@ -97,19 +93,19 @@ const PropertyModal = ({ onClose, property }) => {
 
         {/* Property Info */}
         <div className="p-6">
-          <div className="flex items-center gap-2 text-gray-500 text-sm mb-3">
+          <div className="flex items-center gap-2 text-gray-500 text-sm mb-2">
             <FaLocationDot className="text-blue-600" />
             <span>{property.location}</span>
           </div>
 
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">
+          <h2 className="text-xl font-bold text-gray-800 mb-2">
             {property.title}
           </h2>
-          <div className="text-3xl font-bold text-blue-600 mb-4">
+          <div className="text-xl font-bold text-blue-600 mb-2">
             {property.price}
           </div>
 
-          <div className="flex gap-6 p-4 bg-gray-50 rounded-xl mb-4">
+          <div className="flex gap-6 p-4 bg-gray-50 rounded-xl mb-2">
             <div className="flex items-center gap-2">
               <FaBed className="text-blue-600" />
               <span className="text-gray-600">{property.beds} Beds</span>
@@ -126,14 +122,20 @@ const PropertyModal = ({ onClose, property }) => {
             </div>
           </div>
 
-          <div className="mb-6">
+          <div className="mb-4">
             <h3 className="font-semibold mb-2">Description</h3>
             <p className="text-gray-600">{property.description}</p>
           </div>
 
-          <button className="w-full bg-blue-600 text-white py-3 rounded-2xl font-semibold hover:bg-blue-700 transition-colors">
-            Contact Agent
-          </button>
+          <a
+            href="tel:+2348068530094"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <button className="w-full bg-blue-600 text-white py-3 rounded-2xl font-semibold hover:bg-blue-700 transition-colors">
+              Contact Agent
+            </button>
+          </a>
         </div>
       </div>
     </div>
