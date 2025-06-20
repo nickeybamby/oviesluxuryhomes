@@ -32,6 +32,7 @@
     font-style: 18px;
     line-height: 25px;
     text-transform: capitalize;
+    
   
     margin: 0 1rem;
     cursor: pointer;
@@ -53,7 +54,6 @@
     align-items: flex-end;
     flex-direction: column;
     text-align: end;
-    background: var(--color-footer);
     padding: 2rem;
     position: absolute;
     top: 40px;
@@ -81,8 +81,8 @@
   
     .navbar-menu {
       display: flex;
-      color: var(--color-text);
-      font-family: var(--font-family);
+      color: white;
+      gap: 15px;
     }
   }
   
@@ -94,7 +94,7 @@
   
   @media screen and (max-width: 550px) {
     .navbar {
-      padding: 2rem;
+      padding: 0.5rem 2rem;
     }
   
     .navbar-menu_container {
